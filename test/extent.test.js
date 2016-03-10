@@ -3,8 +3,30 @@ var expect = require('expect.js'),
 var write = require('../src/write');
 var types = require('../src/types');
 var fs = require('fs')
+var path = require('path')
+var zip = require('../src/zip')
+
 
 describe('extent', function() {
+
+    // describe("isochrone", function(){
+    //     it('should zip this geojson correctly', function(done){
+                
+    //         fs.readFile(path.join(__dirname, 'isochrone.json'), 'utf-8', function(err,data){
+    //             if (err){
+    //                 throw err
+    //             }
+    //             var js = JSON.parse(data)
+    //             var x = zip(js)
+    //             fs.readFile(path.join(__dirname, 'isochrone.zip'), function(err, data){
+    //                 // console.log(data)
+    //                 expect(x).to.eql(data)
+    //                 done(null)
+    //             })
+
+    //         })
+    //     })
+    // })
 
     describe('#blank', function() {
         it('creates an ext', function() {
@@ -78,9 +100,9 @@ describe('extent', function() {
             // geometries
             [points],
             function(err, files){
-                fs.writeFileSync('polygon.shp', toBuffer(files.shp.buffer));
-                fs.writeFileSync('polygon.shx', toBuffer(files.shx.buffer));
-                fs.writeFileSync('polygon.dbf', toBuffer(files.dbf.buffer));
+                // fs.writeFileSync('polygon.shp', toBuffer(files.shp.buffer));
+                // fs.writeFileSync('polygon.shx', toBuffer(files.shx.buffer));
+                // fs.writeFileSync('polygon.dbf', toBuffer(files.dbf.buffer));
                 var view = files.shp
                 describe('the file', function(){
                     it('has the correct header', function(){
@@ -215,9 +237,9 @@ describe('extent', function() {
             // geometries
             [points],
             function(err, files){
-                fs.writeFileSync('multipolygon.shp', toBuffer(files.shp.buffer));
-                fs.writeFileSync('multipolygon.shx', toBuffer(files.shx.buffer));
-                fs.writeFileSync('multipolygon.dbf', toBuffer(files.dbf.buffer));
+                // fs.writeFileSync('multipolygon.shp', toBuffer(files.shp.buffer));
+                // fs.writeFileSync('multipolygon.shx', toBuffer(files.shx.buffer));
+                // fs.writeFileSync('multipolygon.dbf', toBuffer(files.dbf.buffer));
                 var view = files.shp
 
                 describe('the file', function(){
